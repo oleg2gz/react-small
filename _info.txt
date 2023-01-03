@@ -1,0 +1,22 @@
+﻿Симпатичный проект со стилями под мобильную версию.
+
+Фишка с поиском: на рендер передаётся сразу массив с применением фильтра поиска - если поиска нет, то ничего не фильтруется, если был поиск, то сразу рендерится результат поиска.
+
+Фишка с возвратом фокуса в поле ввода - на кнопку сабмита вешается слушатель клика и по нему фокус возвращается на поле. Первоначальный фокус просто атрибутом autoFocus.
+
+Красивое и интересное оформление полей ввода.
+
+Размеры кнопок не могут быть меньше 48*48 пикселей - как раз под палец.
+
+Использование иконок в качестве кнопок:
+
+npm i react-icons -S
+import { FaTrashAlt } from 'react-icons/fa'
+<FaTrashAlt role="button" tabIndex="0" />
+
+https://www.youtube.com/watch?v=NJ_qbsLf52w
+https://www.youtube.com/watch?v=Fcj6DQT3nVA
+https://www.youtube.com/watch?v=XyIXMQ9SZmI
+https://www.youtube.com/watch?v=r5ombQn3fHY
+https://www.youtube.com/watch?v=j3vk0FW71DM
+by Dave Gray

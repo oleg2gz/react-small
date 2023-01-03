@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Header from './Header'
 import AddItem from './AddItem'
 import Search from './Search'
@@ -12,10 +12,9 @@ export const App = () => {
   const [newItem, setNewItem] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
 
-  const updateAndSave = (items) => {
-    setItems(items)
+  useEffect(() => {
     localStorage.setItem('groceries-list', JSON.stringify(items))
-  }
+  }, [items])
 
   const addItem = (item) => {
     const groceryItem = {
@@ -24,19 +23,19 @@ export const App = () => {
       name: item,
     }
     const updatedItems = [...items, groceryItem]
-    updateAndSave(updatedItems)
+    setItems(updatedItems)
   }
 
   const handleComplete = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? {...item, complete: !item.complete} : item
     )
-    updateAndSave(updatedItems)
+    setItems(updatedItems)
   }
 
   const handleDelete = (id) => {
     const updatedItems = items.filter((item) => item.id !== id)
-    updateAndSave(updatedItems)
+    setItems(updatedItems)
   }
 
   const handleSubmit = (e) => {
