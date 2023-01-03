@@ -1,4 +1,4 @@
-import Item from './Item'
+import Item from '../Item'
 
 export const ItemList = ({items, handleComplete, handleDelete}) => {
   return (

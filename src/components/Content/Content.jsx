@@ -1,4 +1,4 @@
-import ItemList from './ItemList'
+import ItemList from '../ItemList'
 
 export const Content = ({items, handleComplete, handleDelete}) => {
   return (
