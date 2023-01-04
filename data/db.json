@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "complete": false,
+      "name": "Almonds, Unsalted, in the blue bag"
+    },
+    {
+      "id": 2,
+      "complete": false,
+      "name": "Pizza"
+    },
+    {
+      "id": 3,
+      "complete": false,
+      "name": "Bread"
+    },
+    {
+      "id": 4,
+      "complete": false,
+      "name": "Cookies"
+    }
+  ]
+}
