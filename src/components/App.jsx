@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import {apiRequest} from './apiRequest'
 import Header from './Header'
 import AddItem from './AddItem'
 import Search from './Search'
@@ -37,7 +38,7 @@ export const App = () => {
     }, 2000)
   }, [])
 
-  const addItem = (item) => {
+  const addItem = async (item) => {
     const groceryItem = {
       id: crypto.randomUUID(),
       complete: false,
@@ -45,18 +46,45 @@ export const App = () => {
     }
     const updatedItems = [...items, groceryItem]
     setItems(updatedItems)
+
+    const postOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(groceryItem),
+    }
+    const result = await apiRequest(API_URL, postOptions)
+    if (result) setFetchError(result)
   }
 
-  const handleComplete = (id) => {
+  const handleComplete = async (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? {...item, complete: !item.complete} : item
     )
     setItems(updatedItems)
+
+    const checkedItem = updatedItems.find((item) => item.id === id)
+    const patchOptions = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({complete: checkedItem.complete}),
+    }
+    const result = await apiRequest(`${API_URL}/${id}`, patchOptions)
+    if (result) setFetchError(result)
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     const updatedItems = items.filter((item) => item.id !== id)
     setItems(updatedItems)
+
+    const deleteOptions = {
+      method: 'DELETE',
+    }
+    const result = await apiRequest(`${API_URL}/${id}`, deleteOptions)
+    if (result) setFetchError(result)
   }
 
   const handleSubmit = (e) => {

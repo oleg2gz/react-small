@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "complete": false,
+      "complete": true,
       "name": "Pizza"
     },
     {
@@ -16,9 +16,14 @@
       "name": "Bread"
     },
     {
-      "id": 4,
+      "id": "1b29f6f5-d531-429b-87ff-135be04b9f6a",
+      "complete": true,
+      "name": "Spring water"
+    },
+    {
+      "id": "6a546f71-1f7e-4a5a-ad1a-7cedd39bce13",
       "complete": false,
-      "name": "Cookies"
+      "name": "Milk"
     }
   ]
 }
