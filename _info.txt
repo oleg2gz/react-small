@@ -1,0 +1,46 @@
+﻿Task 1
+3 buttons in a row: users, posts, comments.
+Users button is active by default (current state).
+Выбранная кнопка выделяется цветом (цвета бэкграунда и текста свопятся).
+Click on a button changes current active button and loads data as a list.
+Create components: Form, Button, List & ListItem.
+Обратить внимание, что на странице отрисовываются объекты, т.е. их надо предварительно переводить в строки.
+
+Resources
+https://jsonplaceholder.typicode.com/posts
+https://jsonplaceholder.typicode.com/comments
+https://jsonplaceholder.typicode.com/users
+
+Move fetch data logic to useFetch hook.
+
+Task 2
+Refactor List component to Table component.
+Table should be wrapped in div.table-container for CSS formatting.
+Не забываем, что некоторые данные всё ещё будут в объектах (и их неплохо бы из объектов достать рекурсией).
+
+Task 4
+Подумать о том, что у таблицы могут быть предустановленные колонки (и у разных запросов это разные колонки, т.е. надо будет сделать выбор из трёх вариантов).
+
+
+https://github.com/gitdagray/react_fetch_data_challenge
+
+https://www.youtube.com/watch?v=lf_uNOKVSnM
+React Beginners Challenge - Fetch API Data | React JS Beginners Project
+by Dave Gray
+
+20 июл. 2021 г.
+39:02
+
+In this two part React Beginners Challenge, you will use a fake REST API to fetch API data with the useEffect hook. But wait! The challenge is not that simple... you will need to manage React state, apply click events, and build functional components, too.
+
+After learning about the useEffect hook and how to retrieve data with the Fetch API using async/await, I thought it was a good time to recap those tutorials with another project challenge! This is a two part challenge that utilizes a free fake REST API. To complete the challenges, you will need to retrieve data with fetch and useEffect, construct functional components, manage state, handle click events, and more.
+
+(00:00) Intro
+(00:05) Welcome 
+(00:14) React Beginners Challenge - Part A
+(02:27) Hints and Helpers for Part A
+(03:42) Solution Setup
+(05:58) Solution for Part A
+(25:53) React Beginners Challenge - Part B
+(27:07) Hints and Helpers for Part B
+(28:51) Solution for Part B
