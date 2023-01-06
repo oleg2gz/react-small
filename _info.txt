@@ -14,11 +14,13 @@ https://jsonplaceholder.typicode.com/users
 Move fetch data logic to useFetch hook.
 
 Task 2
-Refactor List component to Table component.
+Refactor List component to Table component and ListItem component to Row component. Add Cell component for cell data too.
 Table should be wrapped in div.table-container for CSS formatting.
-Не забываем, что некоторые данные всё ещё будут в объектах (и их неплохо бы из объектов достать рекурсией).
+When mapping through items we only need values for render but we can alse use keys as keys for mapping itself (use Object.entries).
 
-Task 4
+Не забываем, что некоторые данные всё ещё будут в объектах (и их неплохо бы из объектов достать рекурсией - опционально).
+
+Task 3
 Подумать о том, что у таблицы могут быть предустановленные колонки (и у разных запросов это разные колонки, т.е. надо будет сделать выбор из трёх вариантов).
 
 
