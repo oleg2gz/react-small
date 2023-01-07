@@ -14,7 +14,16 @@ export const PostPage = ({posts, handleDelete}) => {
             <p className="postDate">{post.datetime}</p>
             <p className="postBody">{post.body}</p>
 
-            <button onClick={() => handleDelete(post.id)}>Delete Post</button>
+            <Link to={`/edit/${post.id}`}>
+              <button className="editButton">Edit Post</button>
+            </Link>
+
+            <button
+              className="deleteButton"
+              onClick={() => handleDelete(post.id)}
+            >
+              Delete Post
+            </button>
           </>
         )}
 
