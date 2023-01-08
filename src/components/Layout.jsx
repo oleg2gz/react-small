@@ -3,12 +3,12 @@ import {Header} from './Header'
 import {Nav} from './Nav'
 import {Footer} from './Footer'
 
-export const Layout = ({searchTerm, setSearchTerm, width}) => {
+export const Layout = () => {
   return (
     <div className="App">
-      <Header title="React JS Blog" width={width} />
+      <Header title="React JS Blog" />
 
-      <Nav searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Nav />
 
       <Outlet />
 
