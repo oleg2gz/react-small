@@ -1,0 +1,32 @@
+﻿Симпатичный адаптивный проект с красивым CSS оформлением.
+
+React Router v6 (Outlet, Route, Link, useNavigator).
+
+Axios: setting baseURL and CRUD actions (put used instead of patch as the whole post object is replaced).
+
+useAxiosFetch hook - setTimeout for showing isLoading is used on purpose! Интересный момент здесь - флаг isMounted и регулярные проверки на то, что компонент не отключен.
+
+Show icons in Header according to the width of window using custom useWindowSize hook.
+
+
+Моя фишка с мини-хуком для контекста: функция-хук возращает результат (в котором находится value, передаваемый в Провайдере):
+
+export const useCustomContext = () => useContext(SomeContext)
+
+
+npm i react-router-dom@6
+npm i date-fns -S
+npm i axios
+npm i react-icons
+
+JSON Server as backend (provides API endpoint with data):
+
+npx json-server -p 3500 -w data/db.json
+
+https://www.youtube.com/watch?v=Cv_JhlKUpto
+https://www.youtube.com/watch?v=eHnqS9kMH-s
+https://www.youtube.com/watch?v=XBRLVRjZ3CQ
+https://www.youtube.com/watch?v=ZEKBDXGnD4s
+https://www.youtube.com/watch?v=tBuceoEGFhI
+https://www.youtube.com/watch?v=ngVvDegsAW8
+by Dave Gray
