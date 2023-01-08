@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react'
 import {Routes, Route, useNavigate} from 'react-router-dom'
 import {format} from 'date-fns'
 import api from '../api/posts'
+import {useWindowSize} from '../hooks/useWindowSize'
+import {useAxiosFetch} from '../hooks/useAxiosFetch'
 
 import {Layout} from './Layout'
 import {Home} from './Home'
@@ -20,25 +22,15 @@ export const App = () => {
   const [editTitle, setEditTitle] = useState('')
   const [editBody, setEditBody] = useState('')
   const navigate = useNavigate()
+  const {width} = useWindowSize()
+
+  const {data, fetchError, isLoading} = useAxiosFetch(
+    'http://localhost:3500/posts'
+  )
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await api.get('/posts')
-        setPosts(response.data)
-      } catch (error) {
-        if (error.response) {
-          console.log(err.response.data)
-          console.log(err.response.status)
-          console.log(err.response.headers)
-        } else {
-          console.log(`Error: ${error.message}`)
-        }
-      }
-    }
-
-    fetchPosts()
-  }, [])
+    setPosts(data)
+  }, [data])
 
   useEffect(() => {
     const filteredResults = posts.filter(
@@ -109,10 +101,23 @@ export const App = () => {
       <Route
         path="/"
         element={
-          <Layout searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <Layout
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            width={width}
+          />
         }
       >
-        <Route index element={<Home posts={searchResult} />} />
+        <Route
+          index
+          element={
+            <Home
+              posts={searchResult}
+              fetchError={fetchError}
+              isLoading={isLoading}
+            />
+          }
+        />
 
         <Route path="post">
           <Route
