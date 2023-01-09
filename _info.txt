@@ -1,0 +1,26 @@
+﻿Интересный и красивый пример использования редкого, но предположительно полезного хука.
+Использование forwardRef.
+
+1. Add open and close modal handlers.
+2. Add useImperativeHandle to open modal from parent.
+
+https://github.com/gitdagray/useimperativehandle_tut
+
+https://www.youtube.com/watch?v=ZtcgPhWv1e8
+useImperativeHandle Explained with an Example | React Hooks Tutorial
+Dave Gray
+
+24 дек. 2021 г.
+8:40
+
+useImperativeHandle is explained with an example in this React hooks tutorial. useImperativeHandle is a React hook that should not be used often, but it does have some specific use cases. In this tutorial, we will look at how a web page modal can be one of the use cases.
+
+The React useImperativeHandle hook is not used frequently, but it does have a specific use. In this tutorial, we'll look at how the useImperativeHandle hook works and an example of when we might want to use the useImperativeHandle hook.
+
+(00:00) Intro
+(00:14) Welcome and setup
+(00:35) What is useImperativeHandle?
+(00:55) The parent component
+(02:49) The modal component
+(06:24) Rendering the modal and not the parent
+(07:28) The docs and use cases for useImperativeHandle
