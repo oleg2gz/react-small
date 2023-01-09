@@ -1,7 +1,11 @@
-import {forwardRef, useState} from 'react'
+import {forwardRef, useState, useImperativeHandle} from 'react'
 
-export const Modal = forwardRef(() => {
+export const Modal = forwardRef((props, ref) => {
   const [modalState, setModalState] = useState(false)
+
+  useImperativeHandle(ref, () => ({
+    openModal: () => setModalState(true),
+  }))
 
   if (!modalState) return null
 
@@ -9,7 +13,7 @@ export const Modal = forwardRef(() => {
     <div className="modal">
       <p>This is my modal!</p>
 
-      <button>Close Modal</button>
+      <button onClick={() => setModalState(false)}>Close Modal</button>
     </div>
   )
 })

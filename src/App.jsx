@@ -4,13 +4,17 @@ import {Modal} from './Modal'
 export const App = () => {
   const modalRef = useRef()
 
+  const handleOpenModal = () => {
+    modalRef.current.openModal()
+  }
+
   return (
     <main className="App">
       <p>Parent Component</p>
 
       <Modal ref={modalRef} />
 
-      <button>Open Modal</button>
+      <button onClick={handleOpenModal}>Open Modal</button>
     </main>
   )
 }
